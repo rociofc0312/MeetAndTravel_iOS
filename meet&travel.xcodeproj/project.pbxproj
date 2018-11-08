@@ -56,15 +56,55 @@
 		92B4DE0921928079009511A1 /* meet&travel */ = {
 			isa = PBXGroup;
 			children = (
-				92B4DE0A21928079009511A1 /* AppDelegate.swift */,
-				92B4DE0C21928079009511A1 /* ViewController.swift */,
-				92B4DE0E21928079009511A1 /* Main.storyboard */,
-				92B4DE142192807D009511A1 /* Assets.xcassets */,
-				92B4DE162192807D009511A1 /* LaunchScreen.storyboard */,
+				92B4DE2821928950009511A1 /* ViewController */,
+				92B4DE2721928946009511A1 /* Resource */,
+				92B4DE262192893B009511A1 /* Network */,
+				92B4DE2521928932009511A1 /* Model */,
+				92B4DE242192882E009511A1 /* Main */,
 				92B4DE192192807D009511A1 /* Info.plist */,
-				92B4DE1121928079009511A1 /* meet_travel.xcdatamodeld */,
 			);
 			path = "meet&travel";
+			sourceTree = "<group>";
+		};
+		92B4DE242192882E009511A1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				92B4DE0A21928079009511A1 /* AppDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		92B4DE2521928932009511A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				92B4DE1121928079009511A1 /* meet_travel.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		92B4DE262192893B009511A1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		92B4DE2721928946009511A1 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				92B4DE162192807D009511A1 /* LaunchScreen.storyboard */,
+				92B4DE0E21928079009511A1 /* Main.storyboard */,
+				92B4DE142192807D009511A1 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		92B4DE2821928950009511A1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				92B4DE0C21928079009511A1 /* ViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
