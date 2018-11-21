@@ -798,10 +798,10 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
             </objects>
             <point key="canvasLocation" x="3750" y="957"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="bak-yF-UlX">
             <objects>
-                <viewController id="A4K-jQ-b1h" sceneMemberID="viewController">
+                <viewController id="A4K-jQ-b1h" customClass="RegisterViewController" customModule="meet_travel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tox-K6-uzF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -895,6 +895,9 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
                                         <state key="normal" title="Registrar">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="registerButton:" destination="A4K-jQ-b1h" eventType="touchUpInside" id="zoL-mC-XcJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -945,6 +948,17 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QP9-Ra-3HF"/>
                     </view>
+                    <connections>
+                        <outlet property="birthDateTextField" destination="d2b-I0-oV5" id="qN5-F8-Cck"/>
+                        <outlet property="confirmPasswordTextField" destination="nbb-oU-YOm" id="yBA-dY-wcv"/>
+                        <outlet property="dniTextField" destination="1en-iZ-6Ht" id="3Mm-gH-bgs"/>
+                        <outlet property="emailTextField" destination="FKo-VJ-Vek" id="l3l-P0-wlf"/>
+                        <outlet property="firstnameTextField" destination="RZN-hE-Yaa" id="zWl-nZ-51V"/>
+                        <outlet property="lastnameTextField" destination="u6X-ly-p5y" id="FJi-zo-ree"/>
+                        <outlet property="passwordTextField" destination="pN4-ok-zDv" id="xTO-XA-1Z3"/>
+                        <outlet property="registerButton" destination="VOI-qV-CgY" id="3Y4-lF-NKc"/>
+                        <outlet property="telephoneTexField" destination="Q0R-zC-hWd" id="7rd-8n-Mbm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M7X-xE-Byh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B847CCF21A5C58B002C252B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B847CCE21A5C58B002C252B /* User.swift */; };
+		8B847CD921A5CD4F002C252B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B847CD821A5CD4F002C252B /* RegisterViewController.swift */; };
 		8BB85B4921A4AD600070DF26 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB85B4821A4AD600070DF26 /* Event.swift */; };
 		8BB85B4B21A4B1B00070DF26 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB85B4A21A4B1AF0070DF26 /* NetworkResponse.swift */; };
 		8BB85B4D21A4B1DE0070DF26 /* MeetAndTravelApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB85B4C21A4B1DE0070DF26 /* MeetAndTravelApi.swift */; };
@@ -101,6 +103,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8B847CCE21A5C58B002C252B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8B847CD821A5CD4F002C252B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8BB85B4821A4AD600070DF26 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		8BB85B4A21A4B1AF0070DF26 /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkResponse.swift; path = "meet&travel/Network/NetworkResponse.swift"; sourceTree = SOURCE_ROOT; };
 		8BB85B4C21A4B1DE0070DF26 /* MeetAndTravelApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MeetAndTravelApi.swift; path = "meet&travel/Network/MeetAndTravelApi.swift"; sourceTree = SOURCE_ROOT; };
@@ -200,6 +204,7 @@
 			children = (
 				92B4DE1121928079009511A1 /* meet_travel.xcdatamodeld */,
 				8BB85B4821A4AD600070DF26 /* Event.swift */,
+				8B847CCE21A5C58B002C252B /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 				8BBBF18321A501BC00787E4D /* MyTicketsViewController.swift */,
 				8BBBF18521A501F200787E4D /* MyTicketsCell.swift */,
 				8BBBF18721A502AA00787E4D /* MyPurchasesViewController.swift */,
+				8B847CD821A5CD4F002C252B /* RegisterViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -366,6 +372,8 @@
 				8BB85B4B21A4B1B00070DF26 /* NetworkResponse.swift in Sources */,
 				92B4DE0D21928079009511A1 /* ViewController.swift in Sources */,
 				8BB85B7121A4B8A30070DF26 /* AllEventCell.swift in Sources */,
+				8B847CD921A5CD4F002C252B /* RegisterViewController.swift in Sources */,
+				8B847CCF21A5C58B002C252B /* User.swift in Sources */,
 				8BBBF18121A4DDCE00787E4D /* EventViewController.swift in Sources */,
 				8BBBF18621A501F200787E4D /* MyTicketsCell.swift in Sources */,
 				8BBBF18821A502AA00787E4D /* MyPurchasesViewController.swift in Sources */,
