@@ -13,7 +13,7 @@ import Alamofire
 class MeetAndTravelApi {
     static let baseUrl = "https://movilesapp-220219.appspot.com/api"
     static let allEventsUrl = "\(baseUrl)/events"
-    
+    static let registerUrl = "\(baseUrl)/users"
     
     static private func get<T: Decodable>(
         from urlString: String,
@@ -27,6 +27,7 @@ class MeetAndTravelApi {
             os_log("%@", message)
             return
         }
+        
         // Make the Request
         Alamofire.request(url, parameters: parameters)
             .validate()
@@ -81,6 +82,43 @@ class MeetAndTravelApi {
             })
     }
     
+    static private func postNoAuth<T: Decodable>(
+        from urlString: String,
+        authorization: String,
+        parameters: [String: String],
+        responseType: T.Type,
+        responseHandler: @escaping ((T) -> Void),
+        errorHandler: @escaping ((Error) -> Void)) {
+        // Validate URL
+        guard let url = URL(string: urlString) else {
+            let message = "Error on URL"
+            os_log("%@", message)
+            return
+        }
+        let headers: HTTPHeaders = ["Authorization": authorization]
+        
+        // Make the Request
+        Alamofire.request(url, method: .post, parameters: parameters, headers: headers)
+            .validate()
+            .responseJSON(completionHandler: { response in
+                switch response.result {
+                case .success(_):
+                    do {
+                        let decoder = JSONDecoder()
+                        if let data = response.data {
+                            let dataResponse = try decoder.decode(responseType, from: data)
+                            print(data)
+                            responseHandler(dataResponse)
+                        }
+                    } catch {
+                        errorHandler(error)
+                    }
+                case .failure(let error):
+                    errorHandler(error)
+                }
+            })
+    }
+
     static func getEvents(
         responseHandler: @escaping ((NetworkResponse) -> Void),
         errorHandler: @escaping ((Error) -> Void)) {
@@ -89,6 +127,12 @@ class MeetAndTravelApi {
             responseType: NetworkResponse.self,
             responseHandler: responseHandler,
             errorHandler: errorHandler)
+    }
+    
+    static func requestRegister(authorization: String, parameters: Parameters,
+                                responseHandler: @escaping ((NetworkResponse) -> Void),
+                                errorHandler: @escaping ((Error) -> Void)){
+        self.postNoAuth(from: registerUrl, authorization: authorization, parameters: parameters as! [String : String], responseType: NetworkResponse.self, responseHandler: responseHandler, errorHandler: errorHandler)
     }
     
 }
