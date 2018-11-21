@@ -25,9 +25,6 @@
 		92B4DE1321928079009511A1 /* meet_travel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92B4DE1121928079009511A1 /* meet_travel.xcdatamodeld */; };
 		92B4DE152192807D009511A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92B4DE142192807D009511A1 /* Assets.xcassets */; };
 		92B4DE182192807D009511A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92B4DE162192807D009511A1 /* LaunchScreen.storyboard */; };
-		D5027A9421A5C7A000885FE0 /* UserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5027A9321A5C7A000885FE0 /* UserTypeViewController.swift */; };
-		D5027A9621A5C8FD00885FE0 /* PromotorRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5027A9521A5C8FD00885FE0 /* PromotorRegistrationViewController.swift */; };
-		D5027A9821A5C91A00885FE0 /* UserRegistrarionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5027A9721A5C91A00885FE0 /* UserRegistrarionViewController.swift */; };
 		D5027A9A21A5CAE700885FE0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5027A9921A5CAE700885FE0 /* LoginViewController.swift */; };
 		D581703021A5A9CD0006025E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D581702321A5A9AE0006025E /* Alamofire.framework */; };
 		D581703121A5A9CD0006025E /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D581702321A5A9AE0006025E /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -127,9 +124,6 @@
 		92B4DE142192807D009511A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92B4DE172192807D009511A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92B4DE192192807D009511A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D5027A9321A5C7A000885FE0 /* UserTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeViewController.swift; sourceTree = "<group>"; };
-		D5027A9521A5C8FD00885FE0 /* PromotorRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotorRegistrationViewController.swift; sourceTree = "<group>"; };
-		D5027A9721A5C91A00885FE0 /* UserRegistrarionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrarionViewController.swift; sourceTree = "<group>"; };
 		D5027A9921A5CAE700885FE0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D581701721A5A9AD0006025E /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -224,13 +218,8 @@
 				8BBBF18321A501BC00787E4D /* MyTicketsViewController.swift */,
 				8BBBF18521A501F200787E4D /* MyTicketsCell.swift */,
 				8BBBF18721A502AA00787E4D /* MyPurchasesViewController.swift */,
-				D5027A9321A5C7A000885FE0 /* UserTypeViewController.swift */,
-				D5027A9521A5C8FD00885FE0 /* PromotorRegistrationViewController.swift */,
-				D5027A9721A5C91A00885FE0 /* UserRegistrarionViewController.swift */,
 				D5027A9921A5CAE700885FE0 /* LoginViewController.swift */,
-
 				8B847CD821A5CD4F002C252B /* RegisterViewController.swift */,
-
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -382,11 +371,9 @@
 			files = (
 				8BB85B4921A4AD600070DF26 /* Event.swift in Sources */,
 				8BBBF18421A501BC00787E4D /* MyTicketsViewController.swift in Sources */,
-				D5027A9421A5C7A000885FE0 /* UserTypeViewController.swift in Sources */,
 				8BB85B6D21A4B7020070DF26 /* UIImageViewExtension.swift in Sources */,
 				8BB85B4B21A4B1B00070DF26 /* NetworkResponse.swift in Sources */,
 				92B4DE0D21928079009511A1 /* ViewController.swift in Sources */,
-				D5027A9821A5C91A00885FE0 /* UserRegistrarionViewController.swift in Sources */,
 				8BB85B7121A4B8A30070DF26 /* AllEventCell.swift in Sources */,
 				8B847CD921A5CD4F002C252B /* RegisterViewController.swift in Sources */,
 				8B847CCF21A5C58B002C252B /* User.swift in Sources */,
@@ -394,7 +381,6 @@
 				8BBBF18621A501F200787E4D /* MyTicketsCell.swift in Sources */,
 				8BBBF18821A502AA00787E4D /* MyPurchasesViewController.swift in Sources */,
 				92B4DE0B21928079009511A1 /* AppDelegate.swift in Sources */,
-				D5027A9621A5C8FD00885FE0 /* PromotorRegistrationViewController.swift in Sources */,
 				D5027A9A21A5CAE700885FE0 /* LoginViewController.swift in Sources */,
 				8BB85B6F21A4B84E0070DF26 /* AllEventsViewController.swift in Sources */,
 				92B4DE1321928079009511A1 /* meet_travel.xcdatamodeld in Sources */,
