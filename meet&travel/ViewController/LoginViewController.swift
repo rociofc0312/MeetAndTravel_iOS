@@ -42,15 +42,29 @@ class LoginViewController: UIViewController {
     func handleResponse(response: NetworkResponse) {
         
         if response.token != nil {
-            self.user = response.user
-            self.token = response.token
-            self.performSegue(withIdentifier: "loginSegue", sender: nil)
-            print("Login Ok" + response.token!)
-        }else {
-            let alertController = UIAlertController(title: "Alert", message: "Invalid email or password", preferredStyle: UIAlertController.Style.alert)
-            alertController.addAction(UIAlertAction(title:"Accept", style: UIAlertAction.Style.default,handler:nil))
             
-            self.present(alertController,animated: true, completion: nil)
+            let user = response.user
+            let userToken = response.token
+            
+            let encoder = JSONEncoder()
+            let defaults = UserDefaults.standard
+            
+            //Encoding object to save it on user defaults
+            if let encoded = try? encoder.encode(user){
+                defaults.set(encoded, forKey: "SavedUser")
+            }
+            
+            defaults.set(userToken, forKey: "SavedToken")
+            //Check if object was saved
+            if let savedUser = defaults.object(forKey: "SavedUser") as? Data{
+                let decoder = JSONDecoder()
+                if let loadedUser = try? decoder.decode(User.self, from: savedUser){
+                    print(loadedUser)
+                }
+            }
+            
+            //Perform segue to change view
+            self.performSegue(withIdentifier: "loginSegue", sender: nil)
         }
     }
     
@@ -63,6 +77,7 @@ class LoginViewController: UIViewController {
         self.present(alertController,animated: true, completion: nil)
     }
 
+    
     
     /*
     // MARK: - Navigation
