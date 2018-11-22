@@ -52,7 +52,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="fYk-jB-aiJ" kind="show" id="jh0-Os-FHq"/>
+                                            <action selector="logInButton:" destination="yAq-UD-lxN" eventType="touchUpInside" id="BDh-Iw-MEo"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -212,6 +212,12 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="IuZ-ta-Jlt"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="2C4-QM-ldl" id="XNN-Gv-y1f"/>
+                        <outlet property="passwordTextField" destination="SEI-YG-ukx" id="9kX-Ey-4nB"/>
+                        <outlet property="signInButton" destination="ugc-aC-KAg" id="Q8o-85-Mye"/>
+                        <segue destination="fYk-jB-aiJ" kind="show" identifier="loginSegue" id="3JY-La-mlp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O7M-Ww-1Ap" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

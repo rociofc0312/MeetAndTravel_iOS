@@ -11,4 +11,9 @@ import Foundation
 struct NetworkResponse: Codable {
     var message: String?
     var events: [Event]?
+    var status: String?
+    var user: User?
+    var token: String?
 }
+
+	

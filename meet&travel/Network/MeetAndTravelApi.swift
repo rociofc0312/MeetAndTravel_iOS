@@ -14,6 +14,7 @@ class MeetAndTravelApi {
     static let baseUrl = "https://movilesapp-220219.appspot.com/api"
     static let allEventsUrl = "\(baseUrl)/events"
     static let registerUrl = "\(baseUrl)/users"
+    static let loginUrl = "\(baseUrl)/users/auth"
     
     static private func get<T: Decodable>(
         from urlString: String,
@@ -95,10 +96,10 @@ class MeetAndTravelApi {
             os_log("%@", message)
             return
         }
-        let headers: HTTPHeaders = ["Authorization": authorization]
+        let headers: HTTPHeaders = ["Content-Type":"application/json","Authorization": authorization]
         
         // Make the Request
-        Alamofire.request(url, method: .post, parameters: parameters, headers: headers)
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default , headers: headers)
             .validate()
             .responseJSON(completionHandler: { response in
                 switch response.result {
@@ -133,6 +134,12 @@ class MeetAndTravelApi {
                                 responseHandler: @escaping ((NetworkResponse) -> Void),
                                 errorHandler: @escaping ((Error) -> Void)){
         self.postNoAuth(from: registerUrl, authorization: authorization, parameters: parameters as! [String : String], responseType: NetworkResponse.self, responseHandler: responseHandler, errorHandler: errorHandler)
+    }
+    
+    static func requestLogin(authorization: String, parameters: Parameters,
+                                responseHandler: @escaping ((NetworkResponse) -> Void),
+                                errorHandler: @escaping ((Error) -> Void)){
+        self.postNoAuth(from: loginUrl, authorization: authorization, parameters: parameters as! [String : String], responseType: NetworkResponse.self, responseHandler: responseHandler, errorHandler: errorHandler)
     }
     
 }

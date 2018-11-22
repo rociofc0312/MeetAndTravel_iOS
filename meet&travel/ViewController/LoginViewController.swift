@@ -7,19 +7,63 @@
 //
 
 import UIKit
-
+import os
 class LoginViewController: UIViewController {
 
+    
+    
+    @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    var user: Any?
+    var token: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func prepareForUnwind(segue: UIStoryboardSegue){
-           
+    @IBAction func logInButton(_ sender: Any){
+        MeetAndTravelApi.requestLogin(authorization: "", parameters: buildRequest(), responseHandler: handleResponse, errorHandler: handleError)
+    }
+    
+    func buildRequest() -> [String:String]{
+        let user = [
+            "email" : emailTextField.text,
+            "password": passwordTextField.text
+        ]
+        
+        return user as! [String: String]
+    }
+    
+    
+    func handleResponse(response: NetworkResponse) {
+        
+        if response.token != nil {
+            self.user = response.user
+            self.token = response.token
+            self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            print("Login Ok" + response.token!)
+        }else {
+            let alertController = UIAlertController(title: "Alert", message: "Invalid email or password", preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title:"Accept", style: UIAlertAction.Style.default,handler:nil))
+            
+            self.present(alertController,animated: true, completion: nil)
+        }
+    }
+    
+    func handleError(error: Error) {
+        let message = "Error on Sources Request: \(error.localizedDescription)"
+        os_log("%@", message)
+        let alertController = UIAlertController(title: "Alert", message: "Invalid email or password", preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title:"Accept", style: UIAlertAction.Style.default,handler:nil))
+        
+        self.present(alertController,animated: true, completion: nil)
     }
 
+    
     /*
     // MARK: - Navigation
 

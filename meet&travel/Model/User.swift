@@ -18,7 +18,9 @@ struct User: Codable {
     var birthdate: String?
     var password: String?
     var confirmPassword: String?
-    
+    var created_at: String?
+    var updated_at: String?
+    var exp: Int?
     enum CodingKeys: String, CodingKey {
         case id
         case firstname

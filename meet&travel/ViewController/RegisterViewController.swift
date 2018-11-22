@@ -46,7 +46,9 @@ class RegisterViewController: UIViewController {
     }
     
     func handleResponse(response: NetworkResponse) {
-        print("Message: \(response.message!))")
+        if response.message != nil {
+            print("Message: \(response.message))")
+        }
     }
     
     func handleError(error: Error) {
